@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.db
+*.db-shm
+*.db-wal
+.upload_tmp/
+static/uploads/*
+!static/uploads/.gitkeep

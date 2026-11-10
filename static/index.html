@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مالك بن رضا المحمدي</title>
+<meta name="description" content="قناة علمية تنشر فيها برامج ودروس وفوائد الشيخ د. مالك المحمدي - وفَّقه الله -">
+<meta name="theme-color" content="#153a35">
+<link rel="icon" type="image/jpeg" href="/img/malik-logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Noto+Naskh+Arabic:wght@500;600;700&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><div class="nav">
+  <a class="logo" href="#home"><img class="logo-image" id="lg" src="/img/malik-logo.jpg" alt=""><span><b id="brand"></b><small id="brand-subtitle"></small></span></a>
+  <button class="ham" id="ham" type="button" aria-label="القائمة" data-act="menu">☰</button>
+  <nav class="links" id="nav"></nav>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="التبديل إلى الوضع الداكن" title="التبديل إلى الوضع الداكن">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"/></svg>
+  </button>
+  <div class="account-menu" id="account-menu" hidden>
+    <button class="account-trigger" id="profile-toggle" type="button" data-act="profile-toggle" aria-haspopup="menu" aria-expanded="false" aria-controls="profile-dropdown">
+      <span class="gender-avatar" id="header-avatar" aria-hidden="true"></span>
+      <span class="account-name" id="header-name"></span>
+      <svg class="account-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg>
+    </button>
+    <div class="account-dropdown" id="profile-dropdown" role="menu" hidden>
+      <a href="#account" role="menuitem">ملفي الشخصي</a>
+      <button type="button" data-act="logout" role="menuitem">تسجيل خروج</button>
+    </div>
+  </div>
+</div></header>
+<main id="app"><section><p class="sub">جارٍ التحميل…</p></section></main>
+<footer id="foot"></footer>
+
+<div class="community-backdrop" id="community-backdrop" hidden data-act="communication-close"></div>
+<aside class="notifications-panel" id="notifications-panel" aria-label="الإشعارات" hidden></aside>
+<aside class="community-panel" id="community-panel" aria-label="التواصل الداخلي" hidden></aside>
+<div class="communication-dock" aria-label="الإشعارات والتواصل">
+  <button class="dock-action notification-toggle" id="notification-toggle" type="button" data-act="notification-toggle"
+    aria-label="الإشعارات" title="الإشعارات" aria-expanded="false" aria-controls="notifications-panel" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg>
+    <span class="notification-count" id="notification-count" hidden>0</span>
+  </button>
+  <button class="dock-action community-toggle" id="community-toggle" type="button" data-act="community-toggle"
+    aria-label="التواصل الداخلي" title="التواصل الداخلي" aria-expanded="false" aria-controls="community-panel" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H8l-4 3z"/><path d="M8 9h8m-8 4h5"/></svg>
+  </button>
+</div>
+<div class="notification-toasts" id="notification-toasts" aria-live="polite" aria-atomic="false"></div>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="mtitle" hidden>
+  <div class="mbox">
+    <div class="mhead"><h3 id="mtitle"></h3><button type="button" class="mclose" data-act="close" aria-label="إغلاق">✕</button></div>
+    <div class="modal-tabs" id="mtabs" role="tablist" aria-label="مواد الدرس" hidden></div>
+    <div class="mplayer" id="mplayer"></div>
+    <div class="mresources" id="mresources" hidden></div>
+    <div class="mfoot" id="mfoot"></div>
+  </div>
+</div>
+<div id="toast" class="toast" role="status" hidden></div>
+<div class="announcement-popup" id="announcement-popup" role="dialog" aria-modal="true" aria-labelledby="announcement-popup-title" hidden>
+  <div class="announcement-popup-card">
+    <button class="announcement-popup-close" type="button" data-act="announcement-close" aria-label="إغلاق الإعلان">✕</button>
+    <div id="announcement-popup-content"></div>
+    <button type="button" class="btn announcement-popup-dismiss" data-act="announcement-close">حسنًا</button>
+  </div>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
