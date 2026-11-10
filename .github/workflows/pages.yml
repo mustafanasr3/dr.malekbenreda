@@ -1,0 +1,50 @@
+name: Publish static preview to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/pages.yml
+      - pages-preview/**
+      - static/img/malik-logo.jpg
+      - static/img/footer-calligraphy-from-user.png
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare static preview
+        run: |
+          mkdir -p _site/img
+          cp pages-preview/index.html _site/index.html
+          cp static/img/malik-logo.jpg _site/img/
+          cp static/img/footer-calligraphy-from-user.png _site/img/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

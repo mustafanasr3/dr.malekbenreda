@@ -99,3 +99,9 @@ python server.py
 - `static/` — واجهة الموقع وملفاتها.
 
 المتغيرات المدعومة: `HOST` (افتراضي `0.0.0.0`)، `PORT` (افتراضي `8000`)، `DB_PATH`، و`SECURE_COOKIE` و`TRUST_PROXY`.
+
+## معاينة GitHub Pages
+
+ينشر سير العمل نسخة عرض ثابتة من `pages-preview/` عند الدفع إلى فرع `main`. بعد إضافته، فعّل النشر مرة واحدة من إعدادات المستودع: **Settings ← Pages ← Build and deployment ← Source ← GitHub Actions**. بعد نجاح سير العمل ستتوفر المعاينة على `https://mustafanasr3.github.io/dr.malekbenreda/`.
+
+GitHub Pages لا يشغّل خادم Python أو SQLite؛ لذلك لا تعرض هذه المعاينة المحتوى المباشر أو تسجيل الدخول أو لوحة التحكم. لتشغيل الموقع بكامل وظائفه يلزم استضافته على منصة تشغّل Python.
